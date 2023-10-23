@@ -19,9 +19,9 @@ import reduxLogo from "./assets/redux.svg";
 import menuIcon from "./assets/icons8-menu.svg";
 import closeIcon from "./assets/icons8-close.svg"
 import { motion } from "framer-motion";
-import company2slide1 from "./assets/editor.png";
-import company2slide2 from "./assets/analytics.png";
-import company2slide3 from "./assets/receiverEnd.png";
+import company2slide1 from "./assets/email-marketin3.webp";
+import company2slide2 from "./assets/Email-marketing2.png";
+import company2slide3 from "./assets/email-marketing1.png";
 import Carousel from 'react-bootstrap/Carousel';
 import erpSlide1 from './assets/erp-app1.jpeg'
 import erpSlide2 from './assets/erp-app2.jpeg'
@@ -37,12 +37,6 @@ function App() {
   const [selectedTab , setSelectedTab] = useState("Home");
   const [state, handleSubmit] = useForm("xyyqoyqj");
   const [showSideBar, setShowSideBar] = useState(false);
-  const [sideBarMarginValue, setSideBarMarginValue] = useState(0);
-  const images = [
-    company2slide1,
-    company2slide2,
-    company2slide3
-  ];
   const [currentIndex, setCurrentIndex] = useState(0);
   
   if(state?.result?.kind === "success") {
@@ -91,14 +85,6 @@ function App() {
   }
   window.addEventListener("scroll", handleScroll);
 
-  const goToNextSlide = () => {
-    setCurrentIndex((currentIndex + 1) % images.length);
-  };
-
-  const goToPrevSlide = () => {
-    setCurrentIndex((currentIndex - 1 + images.length) % images.length);
-  };
-  
   return (
 
     <div className='portfolio-main-container'>
@@ -112,20 +98,30 @@ function App() {
                 <a className={`main-page-header-sections ${selectedTab == li.name && "main-page-header-sections-selected"}`} onClick={(e)=>{tabClick(e,li)}}>{li.name}</a>)
               })} 
             </div>
-            <div className='main-page-header-side-bar-icon' onClick={() => {setShowSideBar(true);setSideBarMarginValue(60)}}>
-              <img src={menuIcon}/>
-            </div>
-            <div className={`main-page-header-side-bar-container ${showSideBar && "expanded"}`} style={{width: `${sideBarMarginValue}%`}}>
-              <div className='side-bar-close-icon-container' onClick={()=>{setShowSideBar(false);setSideBarMarginValue(0)}}>
-                <img src={closeIcon}/>
+            {!showSideBar &&
+              <div className='main-page-header-side-bar-icon' onClick={() => {setShowSideBar(true)}}>
+                <img src={menuIcon}/>
               </div>
-              <ul className='side-bar-list-contaioner'>
-                {headerList.map((li) => {
-                  return(
-                  <li className='side-bar-list-content' onClick={(e)=>{tabClick(e,li);setShowSideBar(false);setSideBarMarginValue(0)}}>{li.name}</li>)
-                })}
-              </ul>
-            </div>
+            }
+            {showSideBar &&
+              <motion.div
+                className="main-page-header-side-bar-container"
+                style={{position: "relative"}}
+                initial={{ right: "-40%" }}
+                whileInView={{ right: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className='side-bar-close-icon-container' onClick={()=>{setShowSideBar(false);}}>
+                  <img src={closeIcon}/>
+                </div>
+                <ul className='side-bar-list-contaioner'>
+                  {headerList.map((li) => {
+                    return(
+                    <li className='side-bar-list-content' onClick={(e)=>{tabClick(e,li);setShowSideBar(false);}}>{li.name}</li>)
+                  })}
+                </ul>
+              </motion.div>
+            }
           </div>
         </div>
       </div>
@@ -232,14 +228,14 @@ function App() {
         <div className='portfolio-page-comapny1-container' id="portfolio">
           <div className='portfolio-page-comapny1-carousel'>
             <Carousel>
-              <Carousel.Item interval={100000}>
-                <img src={company2slide1} alt="First slide" width="100%" className='carousel-images'/>
+              <Carousel.Item interval={3000}>
+                <img src={company2slide1} alt="First slide" width="100%" height="300px" className='carousel-images'/>
               </Carousel.Item>
-              <Carousel.Item interval={10000}>
-                <img src={company2slide2} alt="Second slide" width="100%" className='carousel-images'/>
+              <Carousel.Item interval={3000}>
+                <img src={company2slide2} alt="Second slide" width="100%" height="300px" className='carousel-images'/>
               </Carousel.Item>
-              <Carousel.Item interval={10000}>
-                <img src={company2slide3} alt="Third slide" width="100%" className='carousel-images'/>
+              <Carousel.Item interval={3000}>
+                <img src={company2slide3} alt="Second slide" width="100%" height="300px" className='carousel-images'/>
               </Carousel.Item>
             </Carousel>
           </div>
@@ -273,11 +269,11 @@ function App() {
           </div>
           <div className='portfolio-page-comapny1-carousel'>
             <Carousel>
-              <Carousel.Item interval={100000}>
-                <img src={erpSlide1} alt="First slide" width="100%" className='carousel-images'/>
+              <Carousel.Item interval={3000}>
+                <img src={erpSlide1} alt="First slide" width="100%" height="300px" className='carousel-images'/>
               </Carousel.Item>
-              <Carousel.Item interval={10000}>
-                <img src={erpSlide2} alt="Second slide" width="100%" height="444px" className='carousel-images'/>
+              <Carousel.Item interval={3000}>
+                <img src={erpSlide2} alt="Second slide" width="100%" height="300px" className='carousel-images'/>
               </Carousel.Item>
             </Carousel>
           </div>

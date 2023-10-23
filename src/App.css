@@ -263,7 +263,7 @@
   flex-direction: column;
   background: white;
   height: 100vh;
-  transition: width 0.9s ease;
+  /* transition: width 0.9s ease; */
 }
 
 .portfolio-page-container {
