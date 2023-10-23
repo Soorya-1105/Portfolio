@@ -122,7 +122,7 @@ function App() {
               <ul className='side-bar-list-contaioner'>
                 {headerList.map((li) => {
                   return(
-                  <li className='side-bar-list-content' onClick={()=>{tabClick(li);setShowSideBar(false)}}>{li.name}</li>)
+                  <li className='side-bar-list-content' onClick={(e)=>{tabClick(e,li);setShowSideBar(false)}}>{li.name}</li>)
                 })}
               </ul>
             </div>
