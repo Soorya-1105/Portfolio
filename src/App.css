@@ -471,8 +471,7 @@
 
 .contact-page-input-box {
   border: none;
-  /* box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 12px 0 rgb(67 67 67); */
-  width: auto;
+  width: 300px;
   height: 35px;
   margin: 10px;
   border-bottom: 1px solid #FFFFFF;
@@ -480,10 +479,22 @@
   outline: none;
 }
 
+@media screen and (max-width: 760px) {
+  .contact-page-input-box {
+    width: auto !important;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .contact-page-submit-btn {
+    width: auto !important;
+  }
+}
+
 .contact-page-submit-btn {
   cursor: pointer;
   color: #fafafa;
-  width: auto;
+  width: 300px;
   height: 30px;
   text-align: center;
   font: normal normal 12px Inter;
