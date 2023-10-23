@@ -11,6 +11,24 @@
   justify-content: space-between;
 }
 
+@media screen and (max-width: 760px) {
+  .home-page-content-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .profile-pic-img {
+    margin: auto !important;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .contact-page-container {
+    width: 100% !important;
+  }
+}
+
 .home-page-content {
   font: normal normal bold 4em Inter;
   display: flex;
@@ -309,6 +327,44 @@
   font: normal normal 17px Inter;
   text-align: right;
   margin-right: 45px;
+}
+
+@media screen and (max-width: 760px) {
+  .portfolio-page-comapny1-work {
+    text-align: center !important;
+    margin-right: 0px !important;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .portfolio-page-comapny1-content {
+    margin: auto;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .portfolio-page-comapny1-carousel{
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .portfolio-page-comapny1-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .experience-page-content {
+    width: -webkit-fill-available;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .experience-page-company {
+    letter-spacing: 0px !important;
+  }
 }
 
 .side-bar-close-icon-container {
