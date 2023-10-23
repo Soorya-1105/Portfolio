@@ -294,9 +294,9 @@ function App() {
         <div className='contact-page-contact-content'>
           <div style={{marginTop: "auto"}}>
             <div style={{display: "flex", justifyContent: "space-between", marginBottom: "10px"}}>
-              <img src={instaLogo} width="20%"/>
-              <img src={linkedInLogo} width="20%"/>
-              <img src={gitLogo} width="20%"/>
+              <a href="https://instagram.com/__soorya.s__?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" target="_blank" style={{display: "contents"}}><img src={instaLogo} width="18%"/></a>
+              <a href="https://www.linkedin.com/in/soorya-s-12141411a" target="_blank" style={{display: "contents"}}><img src={linkedInLogo} width="20%"/></a>
+              <a href="https://github.com/Soorya-1105" target="_blank" style={{display: "contents"}}><img src={gitLogo} width="20%"/></a>
             </div>
             <div style={{marginBottom: "10px"}}>
               soorya1105@gmail.com

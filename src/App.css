@@ -187,6 +187,7 @@
 .header-logo-img {
   border-radius: 50%;
   margin-left: 10px;
+  width: fit-content;
 }
 
 .about-page-btn {
