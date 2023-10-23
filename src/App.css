@@ -92,12 +92,6 @@
   justify-content: space-between;
 }
 
-@media screen and (max-width: 760px) {
-  .contact-page-contact-content {
-    margin-left: 100px;
-  }
-}
-
 .skills-container {
   display: flex;
   padding: 15px;
@@ -263,7 +257,7 @@
   flex-direction: column;
   background: white;
   height: 100vh;
-  /* transition: width 0.9s ease; */
+  transition: width 0.9s ease;
 }
 
 .portfolio-page-container {
@@ -454,7 +448,6 @@
 .portfolio-main-container {
   background-image: url("https://static.wixstatic.com/media/035244_9f46dd7c6e524eef94172c670fff1913~mv2_d_1920_1343_s_2.jpg/v1/fill/w_980,h_1250,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/035244_9f46dd7c6e524eef94172c670fff1913~mv2_d_1920_1343_s_2.jpg");
   background-size: cover;
-  overflow-x: hidden;
 }
 
 .profile-pic-img {
@@ -479,7 +472,7 @@
 .contact-page-input-box {
   border: none;
   /* box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 12px 0 rgb(67 67 67); */
-  width: 300px;
+  width: auto;
   height: 35px;
   margin: 10px;
   border-bottom: 1px solid #FFFFFF;
@@ -490,7 +483,7 @@
 .contact-page-submit-btn {
   cursor: pointer;
   color: #fafafa;
-  width: 300px;
+  width: auto;
   height: 30px;
   text-align: center;
   font: normal normal 12px Inter;

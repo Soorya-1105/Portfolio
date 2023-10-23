@@ -38,6 +38,7 @@ function App() {
   const [state, handleSubmit] = useForm("xyyqoyqj");
   const [showSideBar, setShowSideBar] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showSideBarWidth, setShowSideBarWidth] = useState(0)
   
   if(state?.result?.kind === "success") {
     toast.success("Submitted Successfully");
@@ -99,29 +100,21 @@ function App() {
               })} 
             </div>
             {!showSideBar &&
-              <div className='main-page-header-side-bar-icon' onClick={() => {setShowSideBar(true)}}>
+              <div className='main-page-header-side-bar-icon' onClick={() => {setShowSideBar(true);setShowSideBarWidth(60)}}>
                 <img src={menuIcon}/>
               </div>
             }
-            {showSideBar &&
-              <motion.div
-                className="main-page-header-side-bar-container"
-                style={{position: "relative"}}
-                initial={{ right: "-40%" }}
-                whileInView={{ right: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className='side-bar-close-icon-container' onClick={()=>{setShowSideBar(false);}}>
+            <div className="main-page-header-side-bar-container" style={{width:`${showSideBarWidth}%`}}>
+                <div className='side-bar-close-icon-container' style={{display : `${showSideBar ? "block" : "none"}`}} onClick={()=>{setShowSideBar(false);setShowSideBarWidth(0)}}>
                   <img src={closeIcon}/>
                 </div>
-                <ul className='side-bar-list-contaioner'>
+                <ul className='side-bar-list-contaioner' style={{display : `${showSideBar ? "flex" : "none"}`}}>
                   {headerList.map((li) => {
                     return(
-                    <li className='side-bar-list-content' onClick={(e)=>{tabClick(e,li);setShowSideBar(false);}}>{li.name}</li>)
+                    <li className='side-bar-list-content' onClick={(e)=>{tabClick(e,li);setShowSideBar(false);setShowSideBarWidth(0)}}>{li.name}</li>)
                   })}
                 </ul>
-              </motion.div>
-            }
+            </div>
           </div>
         </div>
       </div>
