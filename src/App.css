@@ -92,6 +92,12 @@
   justify-content: space-between;
 }
 
+@media screen and (max-width: 760px) {
+  .contact-page-contact-content {
+    margin-left: 100px;
+  }
+}
+
 .skills-container {
   display: flex;
   padding: 15px;
