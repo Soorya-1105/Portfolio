@@ -454,6 +454,7 @@
 .portfolio-main-container {
   background-image: url("https://static.wixstatic.com/media/035244_9f46dd7c6e524eef94172c670fff1913~mv2_d_1920_1343_s_2.jpg/v1/fill/w_980,h_1250,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/035244_9f46dd7c6e524eef94172c670fff1913~mv2_d_1920_1343_s_2.jpg");
   background-size: cover;
+  overflow-x: hidden;
 }
 
 .profile-pic-img {
